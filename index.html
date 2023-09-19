@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Introdução à Informática</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        /* Estilo das seções */
+        section {
+            display: none;
+            margin-top: 30px;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+        }
+
+        /* Estilo da página introdutória */
+        .introduction {
+            padding: 20px;
+        }
+
+        .introduction h2 {
+            font-size: 1.5rem;
+        }
+
+        .introduction p {
+            font-size: 1.2rem;
+        }
+
+        /* Guia de navegação */
+        .navigation-guide {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .navigation-guide h2 {
+            font-size: 1.5rem;
+        }
+
+        .navigation-guide ul {
+            list-style-type: square;
+        }
+
+        .navigation-guide li {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo da tela preta de desligamento */
+        #tela-preta {
+            display: none;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #tela-preta .mensagem {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #tela-preta .loading {
+            font-size: 2rem;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ac de Introdução à Informática</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('introducao')">Introdução</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('ligar')">Ligar o Computador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('bios')">BIOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('sistema-operacional')">Sistema Operacional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('inicializacao')">Inicialização do SO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('execucao-de-programas')">Execução de Programas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="mostrarSecao('encerramento')">Encerramento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section id="introducao" class="active introduction">
+            <h2>Boas-vindas a Ac de Introdução à Informática</h2>
+            <p>Nesta AC vamos oferecer uma visão geral do funcionamento de um computador, desde o momento em que você o liga até o encerramento adequado.</p>
+
+            <p>Feito por: Leonardo Duarte, Matheus Magalhães e Rafael Sá</p>
+
+            <a class="btn btn-primary" href="#" onclick="mostrarMenuNavegacao()">Ir para o Menu de Navegação</a>
+        </section>
+
+        <section id="ligar">
+            <h2>Etapa 1: Ligar o Computador</h2>
+            <p>Quando você pressiona o botão de ligar, a fonte de alimentação fornece energia para todos os componentes do computador.</p>
+        </section>
+
+        <section id="bios">
+            <h2>Etapa 2: BIOS (Basic Input/Output System)</h2>
+            <p>A BIOS é a primeira coisa a ser ativada quando você liga o computador. Ela executa verificações iniciais de hardware, como o POST (Power-On Self-Test), para garantir que todos os componentes estejam funcionando corretamente. A BIOS também carrega o sistema operacional a partir do disco rígido ou de um dispositivo de inicialização, como um pendrive.</p>
+        </section>
+
+        <section id="sistema-operacional">
+            <h2>Etapa 3: Sistema Operacional</h2>
+            <p>O sistema operacional é o software que controla o hardware do computador. Ele gerencia recursos como processadores, memória, dispositivos de armazenamento e periféricos. Além disso, fornece uma interface para que os usuários possam executar programas e realizar tarefas.</p>
+        </section>
+
+        <section id="inicializacao">
+            <h2>Etapa 4: Inicialização do Sistema Operacional</h2>
+            <p>Depois que a BIOS carrega o sistema operacional, o SO inicia seus processos. Ele carrega drivers para hardware específico, configurações de rede e outros componentes necessários para o funcionamento adequado. O sistema operacional exibe a tela de login ou a área de trabalho, dependendo da configuração do computador.</p>
+        </section>
+
+        <section id="execucao-de-programas">
+            <h2>Etapa 5: Execução de Programas</h2>
+            <p>Com o sistema operacional carregado, você pode executar programas e aplicativos. O sistema operacional aloca recursos, como CPU e memória, para esses programas e gerencia a interação entre eles. Você pode iniciar navegadores da web, editores de texto, jogos e muitos outros tipos de software.</p>
+        </section>
+
+        <section id="encerramento">
+            <h2>Etapa 6: Encerramento do Computador</h2>
+            <p>Quando você decide desligar o computador, o sistema operacional fecha os programas em execução, salva os dados e fecha os arquivos abertos.</p>
+            <p>Depois disso, você pode clicar no botão abaixo para simular o desligamento do computador:</p>
+            <button class="btn btn-danger rounded-circle" style="font-size: 1.5rem; padding: 10px 20px;" onclick="exibirTelaPreta()">
+                <i class="fas fa-power-off"></i>
+            </button>
+        </section>
+
+        <!-- Tela preta com mensagem de desligamento -->
+        <div id="tela-preta" style="display: none;">
+            <div class="mensagem">
+                <p>Seu Windows está sendo desligado...</p>
+            </div>
+            <div class="loading">
+                <i class="fas fa-circle-notch fa-spin"></i>
+            </div>
+        </div>
+
+        <!-- Guia de navegação -->
+        <section id="guia-navegacao" class="navigation-guide">
+            <h2>Guia de Navegação</h2>
+            <ul>
+                <li>Clique nos links no menu para acessar as explicações sobre cada tópico.</li>
+                <li>Use o menu de navegação acima para encontrar informações específicas sobre o funcionamento do computador.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function mostrarSecao(secaoId) {
+            // Esconde todas as seções
+            $("section").removeClass("active");
+            // Mostra a seção com o ID correspondente
+            $("#" + secaoId).addClass("active");
+        }
+
+        function mostrarMenuNavegacao() {
+            // Esconde todas as seções
+            $("section").removeClass("active");
+            // Mostra o menu de navegação
+            $("#guia-navegacao").addClass("active");
+        }
+
+        function exibirTelaPreta() {
+            // Oculta a seção de encerramento
+            document.getElementById("encerramento").style.display = "none";
+
+            // Exibe a tela preta
+            document.getElementById("tela-preta").style.display = "flex";
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
